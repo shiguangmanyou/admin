@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.crm.workbench.mapper.TranMapper">
+
+    <!--
+        resultType
+         基本类型
+         对象类型
+         map类型
+    -->
+    <select id="queryStages" resultType="map">
+        select stage,count(*) num from tbl_tran group by stage order by stage
+    </select>
+
+    <select id="queryPieVoStages" resultType="pieVo">
+        select stage name,count(*) value from tbl_tran group by stage order by stage
+    </select>
+</mapper>
